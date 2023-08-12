@@ -15,11 +15,23 @@
       height: 100%;
     }
 
+    .js-volume-button {
+      background-color: transparent;
+      color:white;
+      border:none
+    }
+
+    .js-mute-button {
+      background-color: transparent;
+      color:white;
+      border:none
+    }
+
     .control-container {
       position: absolute;
       bottom: 0;
       width: 100%;
-      padding: 10px;
+      height: 30px;
       background-color: rgba(0, 0, 0, 0.5);
     }
 
@@ -33,6 +45,7 @@
       color: white;
       background-color: transparent;
     }
+
   </style>
   <title>Пример подключения плеера</title>
   <meta charset="utf-8">
@@ -46,6 +59,12 @@
       </button>
       <button class="js-pause-button control-button">
         <i class="fa fa-pause"></i>
+      </button>
+      <button class="js-volume-button">
+        <i class="fa fa-volume-off" aria-hidden="true"></i>
+      </button>
+      <button class="js-mute-button" hidden>
+        <i class="fa fa-volume-up" aria-hidden="true"></i>
       </button>
     </div>
   </div>
