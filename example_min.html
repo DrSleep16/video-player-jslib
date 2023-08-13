@@ -35,19 +35,38 @@
       position: absolute;
       bottom: 0;
       width: 100%;
-      height: 30px;
       background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+    }
+
+    .spacer {
+      flex-grow: 1;
     }
 
     .control-button {
       border: none;
       cursor: pointer;
       background-color: transparent;
-      font-size: 24px;
       margin-right: 10px;
     }
 
     .control-button i {
+      font-size: 18px;
+      color: white;
+      background-color: transparent;
+    }
+
+    .js-fullscreen-button {
+      margin-left: auto;
+      border: none;
+      cursor: pointer;
+      color: white;
+      background-color: transparent;
+    }
+
+    .js-fullscreen-button i {
+      font-size: 18px;
       color: white;
       background-color: transparent;
     }
@@ -71,6 +90,9 @@
       </button>
       <button class="js-mute-button" hidden>
         <i class="fa fa-volume-up" aria-hidden="true"></i>
+      </button>
+      <button class="js-fullscreen-button">
+        <i class="fa fa-expand" aria-hidden="true"></i>
       </button>
     </div>
   </div>
