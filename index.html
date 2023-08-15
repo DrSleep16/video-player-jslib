@@ -1,21 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <style>
+    .player-container {
+      width: 800px;
+      height: 600px;
+      position: relative;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .js-video-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .js-volume-button {
+      background-color: transparent;
+      color:white;
+      font-size: 24px;
+      border:none;
+
+    }
+
+    .js-mute-button {
+      background-color: transparent;
+      color:white;
+      font-size: 24px;
+      border:none
+
+    }
+
+    .control-container {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+    }
+
+    .spacer {
+      flex-grow: 1;
+    }
+
+    .control-button {
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+      margin-right: 10px;
+    }
+
+    .control-button i {
+      font-size: 18px;
+      color: white;
+      background-color: transparent;
+    }
+
+    .js-fullscreen-button {
+      margin-left: auto;
+      border: none;
+      cursor: pointer;
+      color: white;
+      background-color: transparent;
+    }
+
+    .js-fullscreen-button i {
+      font-size: 18px;
+      color: white;
+      background-color: transparent;
+    }
+
+  </style>
+  <title>Пример подключения плеера</title>
+  <meta charset="utf-8">
 </head>
 <body>
-  <h2>
-    <a href="https://ru.wikipedia.org/wiki/Коала"><b>Коала</b> — Википедия</a>
-    <br>
-    <small>
-      <small>
-        ru.wikipedia.org›Коала
-      </small>
-    </small>
-  </h2>
+  <div class="player-container" id="player">
+    <div class="js-video-container"></div>
+    <div class="control-container">
+      <button class="js-play-button control-button">
+        <i class="fa fa-play"></i>
+      </button>
+      <button class="js-pause-button control-button">
+        <i class="fa fa-pause"></i>
+      </button>
+      <button class="js-volume-button">
+        <i class="fa fa-volume-off" aria-hidden="true"></i>
+      </button>
+      <button class="js-mute-button" hidden>
+        <i class="fa fa-volume-up" aria-hidden="true"></i>
+      </button>
+      <button class="js-fullscreen-button">
+        <i class="fa fa-expand" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
+  <script src="player.js"></script>
 
-  <p><b>Коала</b> (лат. Phascolarctos cinereus) — вид сумчатых, обитающий в Австралии.
-    Единственный современный представитель семейства коаловых ... <a href="https://ru.wikipedia.org/wiki/Коала">Читать ещё</a></p>
+  <script type="text/javascript">
+    createPlayer({elementId: 'player'});
+  </script>
 </body>
 </html>
