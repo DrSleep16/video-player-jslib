@@ -9,72 +9,38 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   <style>
-    .player-container {
+    .vp-container {
       width: 800px;
       height: 600px;
-      position: relative;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .js-video-container {
-      width: 100%;
-      height: 100%;
-    }
-
-    .js-volume-button {
-      background-color: transparent;
-      color:white;
-      font-size: 24px;
-      border:none;
-
-    }
-
-    .js-mute-button {
-      background-color: transparent;
-      color:white;
-      font-size: 24px;
-      border:none
-
-    }
-
-    .control-container {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 10px rgba(0,0,0,0.9);
       display: flex;
-      align-items: center;
+      flex-direction: column;
     }
 
-    .spacer {
+    .vp-container .video-container {
       flex-grow: 1;
     }
 
-    .control-button {
-      border: none;
-      cursor: pointer;
-      background-color: transparent;
-      margin-right: 10px;
+    .vp-container .bottom-controls {
+      background: black;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
     }
 
-    .control-button i {
-      font-size: 18px;
-      color: white;
-      background-color: transparent;
+    .vp-container .bottom-controls .viewing-panel {
+      flex-grow: 1;
     }
 
-    .js-fullscreen-button {
-      margin-left: auto;
-      border: none;
+    .vp-container .player-button {
+      border-style: none;
       cursor: pointer;
       color: white;
-      background-color: transparent;
-    }
-
-    .js-fullscreen-button i {
-      font-size: 18px;
-      color: white;
-      background-color: transparent;
+      background: transparent;
+      height: 35px;
+      width: 35px;
+      font-size: 20px;
+      margin: 4px 4px 5px 3px;
     }
 
   </style>
@@ -82,25 +48,26 @@
   <meta charset="utf-8">
 </head>
 <body>
-  <div class="player-container" id="player">
-    <div class="js-video-container"></div>
-    <div class="control-container">
-      <button class="js-play-button control-button">
-        <i class="fa fa-play"></i>
+  <div class="vp-container" id="player">
+    <div class="video-container js-video-container"></div>
+    <div class="bottom-controls">
+      <button class="player-button js-play-button">
+        <i class="fa fa-play" aria-hidden="true"></i>
       </button>
-      <button class="js-pause-button control-button">
-        <i class="fa fa-pause"></i>
+      <button class="player-button js-pause-button" hidden>
+        <i class="fa fa-pause" aria-hidden="true"></i>
       </button>
-      <button class="js-volume-button">
-        <i class="fa fa-volume-off" aria-hidden="true"></i>
-      </button>
-      <button class="js-mute-button" hidden>
+      <button class="player-button js-mute-button">
         <i class="fa fa-volume-up" aria-hidden="true"></i>
       </button>
-      <button class="js-fullscreen-button">
+      <button class="player-button js-volume-button" hidden>
+        <i class="fa fa-volume-off" aria-hidden="true"></i>
+      </button>
+      <div class="viewing-panel"></div>
+      <button class="player-button js-fullscreen-button">
         <i class="fa fa-expand" aria-hidden="true"></i>
       </button>
-    </div>
+      </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
