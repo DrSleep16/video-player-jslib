@@ -7,6 +7,8 @@
 
 ![max example](screenshots/player.gif)
 
+Адрес сайта: https://drsleep16.github.io/video-player-jslib/
+
 Построен на базе библиотеки [Playable](https://wix.github.io/playable/).
 
 ## Примеры
